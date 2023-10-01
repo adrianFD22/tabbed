@@ -38,6 +38,7 @@ config.h:
 
 clean:
 	rm -f ${BIN} ${OBJ} "${NAME}-${VERSION}.tar.gz"
+	if [ -f "config.h" ]; then rm config.h; fi
 
 dist: clean
 	mkdir -p "${NAME}-${VERSION}"
