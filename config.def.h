@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static char* font         = "monospace:size=9";
+static char* font         = "monospace:size=8";
 static char* normbgcolor  = "#222222";
 static char* normfgcolor  = "#cccccc";
 static char* selbgcolor   = "#555555";
@@ -11,9 +11,10 @@ static char* urgfgcolor   = "#cc0000";
 static char* before       = "<";
 static char* after        = ">";
 static char* titletrim    = "...";
-static int tabwidth       = 200;
+static int tabwidth       = 50;
 static int focusnew       = 1;
 static int urgentswitch   = 0;
+static int barHeight	  = 20;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,
