@@ -21,7 +21,7 @@ static int barHeight	  = 20;
  * then the current position is changed + newposition. If npisrelative
  * is False, then newposition is an absolute position.
  */
-static int newposition   = 0;
+static int newposition   = -1;
 static int npisrelative  = 0;
 
 #define SETPROP(p) { \
