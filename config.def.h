@@ -28,7 +28,7 @@ static int npisrelative  = 0;
         .v = (char *[]){ "/bin/sh", "-c", \
                 "prop=\"`xwininfo -children -id $1 | grep '^     0x' |" \
                 "sed -e's@^ *\\(0x[0-9a-f]*\\) \"\\([^\"]*\\)\".*@\\1 \\2@' |" \
-                "xargs -0 printf %b | dmenu -l 10 -w $1`\" &&" \
+                "xargs -0 printf %b | dmenu -l 10 -i -w $1`\" &&" \
                 "xprop -id $1 -f $0 8s -set $0 \"$prop\"", \
                 p, winid, NULL \
         } \
@@ -61,13 +61,13 @@ static const Key keys[] = {
 	//{ MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } },
 	//{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
 
-	{ MODKEY,     XK_k,      rotate,      { .i = +1 } },
-	{ MODKEY,     XK_j,      rotate,      { .i = -1 } },
-	//{ MODKEY|ShiftMask,     XK_j,      movetab,     { .i = -1 } },
-	//{ MODKEY|ShiftMask,     XK_k,      movetab,     { .i = +1 } },
+	{ MODKEY,               XK_k,       rotate,      { .i = +1 } },
+	{ MODKEY,               XK_j,       rotate,      { .i = -1 } },
+	{ MODKEY|ShiftMask,     XK_j,       movetab,     { .i = -1 } },
+	{ MODKEY|ShiftMask,     XK_k,       movetab,     { .i = +1 } },
 	//{ MODKEY,               XK_Tab,    rotate,      { .i = 0 } },
 
-	//{ MODKEY,               XK_grave,  spawn,       SETPROP("_TABBED_SELECT_TAB") },
+	{ MODKEY,               XK_f,       spawn,       SETPROP("_TABBED_SELECT_TAB") },
 	//{ MODKEY,               XK_k,      move,        { .i = +1 } },
 	//{ MODKEY,               XK_j,      move,        { .i = -1 } },
 	//{ MODKEY,               XK_2,      move,        { .i = 1 } },
