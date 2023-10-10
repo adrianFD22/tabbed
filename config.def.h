@@ -28,7 +28,7 @@ static int npisrelative  = 0;
         .v = (char *[]){ "/bin/sh", "-c", \
                 "prop=\"`xwininfo -children -id $1 | grep '^     0x' |" \
                 "sed -e's@^ *\\(0x[0-9a-f]*\\) \"\\([^\"]*\\)\".*@\\1 \\2@' |" \
-                "xargs -0 printf %b | dmenu -l 10 -i -w $1`\" &&" \
+                "xargs -0 printf %b | dmenu -p \"Select:\" -l 10 -i -w $1`\" &&" \
                 "xprop -id $1 -f $0 8s -set $0 \"$prop\"", \
                 p, winid, NULL \
         } \
